@@ -2,7 +2,7 @@ import 'package:flutter/material.dart ';
 import 'package:twitter_sentiment_app/services/posts.dart';
 
 class addPost extends StatefulWidget {
-  const addPost({Key? key}) : super(key: key);
+  const addPost({Key key}) : super(key: key);
 
   @override
   State<addPost> createState() => _addPostState();

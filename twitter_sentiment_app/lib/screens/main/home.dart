@@ -6,23 +6,44 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthService _authService = AuthService();
+    final AuthService authService = AuthService();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
         actions: <Widget>[
           TextButton.icon(
-            onPressed: _authService.signOut(),
+            onPressed: authService.signOut(),
             icon: const Icon(Icons.logout_outlined),
             label: const Text('SignOut'),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.pushNamed(context, '/add');
-          }),
+        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.pushNamed(context, '/add');
+        },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+                title: const Text('Profile'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/profile');
+                }),
+            ListTile(
+                title: const Text('Logout'),
+                onTap: () async {
+                  authService.signOut();
+                })
+          ],
+        ),
+      ),
     );
   }
 }
