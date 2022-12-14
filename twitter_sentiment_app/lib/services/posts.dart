@@ -18,7 +18,7 @@ class PostService {
     await FirebaseFirestore.instance.collection("posts").add({
       'text': text,
       'creator': FirebaseAuth.instance.currentUser.uid,
-      'time stamp': FieldValue.serverTimestamp(),
+      'timestamp': FieldValue.serverTimestamp(),
     });
   }
 

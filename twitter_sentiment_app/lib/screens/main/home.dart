@@ -12,17 +12,13 @@ class Home extends StatelessWidget {
         title: const Text("Home"),
         actions: <Widget>[
           TextButton.icon(
-            onPressed: authService.signOut(),
+            onPressed: () async {
+              authService.signOut();
+            },
             icon: const Icon(Icons.logout_outlined),
             label: const Text('SignOut'),
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          Navigator.pushNamed(context, '/add');
-        },
       ),
       drawer: Drawer(
         child: ListView(
@@ -43,6 +39,12 @@ class Home extends StatelessWidget {
                 })
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.pushNamed(context, '/add');
+        },
       ),
     );
   }

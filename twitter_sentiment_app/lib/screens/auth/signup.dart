@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter_sentiment_app/services/auth.dart';
 
@@ -11,7 +10,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  FirebaseAuth auth = FirebaseAuth.instance;
   final AuthService _authService = AuthService();
+
   String email = "", password = "";
   @override
   Widget build(BuildContext context) {

@@ -27,7 +27,7 @@ class _addPostState extends State<addPost> {
           ],
         ),
         body: Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: 20,
               horizontal: 10,
             ),
