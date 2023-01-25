@@ -4,7 +4,10 @@ import 'package:twitter_sentiment_app/auth/signup.dart';
 import 'package:twitter_sentiment_app/models/user.dart';
 import 'package:twitter_sentiment_app/screens/main/home.dart';
 import 'package:twitter_sentiment_app/screens/main/posts/add.dart';
+import 'package:twitter_sentiment_app/screens/main/posts/replies.dart';
 import 'package:twitter_sentiment_app/screens/main/profile/profile.dart';
+
+import 'main/profile/edit.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({Key key}) : super(key: key);
@@ -19,9 +22,11 @@ class Wrapper extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const Home(),
-        '/add': ((context) => const addPost()),
-        '/profile': ((context) => const Profile())
+        '/': (context) => Home(),
+        '/add': ((context) => addPost()),
+        '/profile': ((context) => Profile()),
+        '/edit': ((context) => Edit()),
+        '/reples': ((context) => Replies())
       },
     );
   }
